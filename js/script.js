@@ -26,7 +26,7 @@ for (const row of parkingRows) {
     label.setAttribute("class", "parking-label");
     circle.setAttribute("cx", x.toFixed(2));
     circle.setAttribute("cy", row.y);
-    circle.setAttribute("r", "9");
+    circle.setAttribute("r", "8"); /* radien av circkeln */
     number.setAttribute("x", x.toFixed(2));
     number.setAttribute("y", row.y);
     number.textContent = spaceNumber;

@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../annat/font/Poppins-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins Bold";
+  src: url("../annat/font/Poppins-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
 body {
   background-image: url("../annat/avaparkering.png");
   background-color: #03200c;
@@ -22,8 +38,8 @@ body {
 
 .parking-label text {
   fill: #242424;
-  font-family: Arial, sans-serif;
-  font-size: 7px;
+  font-family: "Poppins Bold", "Poppins", sans-serif;
+  font-size: 7px; /* Storlek på fonten i cirklarna */
   font-weight: 700;
   text-anchor: middle;
   dominant-baseline: central;
