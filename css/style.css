@@ -1,0 +1,30 @@
+body {
+  background-image: url("../annat/avaparkering.png");
+  background-color: #03200c;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.parking-labels {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.parking-label circle {
+  fill: #fff;
+  stroke: rgba(28, 31, 29, 0.55);
+  stroke-width: 0.7;
+}
+
+.parking-label text {
+  fill: #242424;
+  font-family: Arial, sans-serif;
+  font-size: 7px;
+  font-weight: 700;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
