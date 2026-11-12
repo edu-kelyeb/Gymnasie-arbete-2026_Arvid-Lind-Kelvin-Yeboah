@@ -20,18 +20,14 @@ for (const row of parkingRows) {
   for (let index = 0; index < row.count; index += 1) {
     const x = row.firstX + index * row.step;
     const label = document.createElementNS(svgNamespace, "g");
-    const circle = document.createElementNS(svgNamespace, "circle");
     const number = document.createElementNS(svgNamespace, "text");
 
     label.setAttribute("class", "parking-label");
-    circle.setAttribute("cx", x.toFixed(2));
-    circle.setAttribute("cy", row.y);
-    circle.setAttribute("r", "8"); /* radien av circkeln */
     number.setAttribute("x", x.toFixed(2));
     number.setAttribute("y", row.y);
     number.textContent = spaceNumber;
 
-    label.append(circle, number);
+    label.append(number);
     parkingMap.append(label);
     spaceNumber += 1;
   }
