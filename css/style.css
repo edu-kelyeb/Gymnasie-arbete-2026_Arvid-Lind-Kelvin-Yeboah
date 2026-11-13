@@ -17,7 +17,7 @@
 body {
   background-image: url("../annat/avaparkering.png");
   background-color: #071126;
-  background-position: center calc(60% + 2px);
+  background-position: center calc(60%);
   background-repeat: no-repeat;
   background-size: contain;
 }
