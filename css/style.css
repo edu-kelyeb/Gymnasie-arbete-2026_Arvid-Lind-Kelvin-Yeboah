@@ -2,7 +2,7 @@
   font-family: "Poppins";
   src: url("../annat/font/Poppins-Regular.ttf") format("truetype");
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   font-display: swap;
 }
 
@@ -16,8 +16,8 @@
 
 body {
   background-image: url("../annat/avaparkering.png");
-  background-color: #050536;
-  background-position: center;
+  background-color: #071126;
+  background-position: center calc(60% + 2px);
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -27,28 +27,146 @@ body {
   top: 0;
   left: 0;
   z-index: 1;
-  padding: 12px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  width: 100%;
+  padding: 10px 20px;
+  color: #ffffff;
+  background: #071126;
+  font-family: "Poppins", sans-serif;
 }
 
 .navbar img {
   display: block;
-  width: 100px;
-  height: auto;
+  width: 48px;
 }
 
-.parking-labels {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+.navbar > .totala-platser,
+.totala-platser-lediga,
+.totala-platser-upptagna {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 18px;
+  border-left: 1px solid #526078;
 }
 
-.parking-label text {
-  fill: #ffffff;
-  font-family: "Poppins", "Poppins", sans-serif;
-  font-size: 10px; /* Storlek på fonten i cirklarna */
-  font-weight: 700;
-  text-anchor: middle;
-  dominant-baseline: central;
+.totala-content,
+.lediga-content,
+.upptagna-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.totala-content .totala-platser,
+.lediga-content .lediga-platser,
+.upptagna-content .upptagna-platser {
+  color: #ffffff;
+  font-family: "Poppins Bold", sans-serif;
+  font-size: 24px;
+}
+
+.totala-content span,
+.lediga-content span,
+.upptagna-content span {
+  color: #c1c9d8;
+  font-size: 12px;
+}
+
+.totala-platser-lediga .lediga-platser {
+  color: #20c45a;
+}
+
+.totala-platser-upptagna .upptagna-platser {
+  color: #ed3b3b;
+}
+
+.prick {
+  display: block;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.totala-platser-lediga .prick {
+  background: #20c45a;
+}
+
+.totala-platser-upptagna .prick {
+  background: #ed3b3b;
+}
+
+.ledighet {
+  flex: 1;
+  min-width: 150px;
+  padding: 0 18px;
+  border-left: 1px solid #526078;
+}
+
+.ledighet-bar {
+  display: flex;
+  height: 12px;
+  margin-bottom: 6px;
+  overflow: hidden;
+  background: #ed3b3b;
+  border-radius: 10px;
+}
+
+.bar-lediga {
+  width: 70%;
+  background: #20c45a;
+}
+
+.bar-upptagna {
+  flex: 1;
+}
+
+.ledighet p {
+  color: #c1c9d8;
+  font-size: 12px;
+}
+
+.ledighet .lediga-percent {
+  color: #ffffff;
+  font-family: "Poppins Bold", sans-serif;
+}
+
+.navbar-action {
+  padding-left: 18px;
+  color: #ffffff;
+  border-left: 1px solid #526078;
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navbar-action:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 750px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .navbar > .totala-platser,
+  .totala-platser-lediga,
+  .totala-platser-upptagna {
+    padding-left: 10px;
+  }
+
+  .ledighet {
+    flex-basis: 100%;
+    order: 1;
+  }
+
+  .navbar-action {
+    margin-left: auto;
+  }
 }

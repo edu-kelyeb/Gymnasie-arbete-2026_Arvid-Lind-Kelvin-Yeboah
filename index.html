@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,17 +9,43 @@
   </head>
   <body>
     <nav class="navbar">
-      <a href="index.html">
+      <a class="logo" href="index.html">
         <img src="annat/logo.png" alt="Åva Park" />
       </a>
+      <div class="totala-platser">
+        <div class="totala-content">
+          <p class="totala-platser">204</p>
+          <span>Totalt</span>
+        </div>
+      </div>
+      <div class="totala-platser-lediga">
+        <span class="prick"></span>
+        <div class="lediga-content">
+          <p class="lediga-platser">142</p>
+          <span>Lediga</span>
+        </div>
+      </div>
+      <div class="totala-platser-upptagna">
+        <span class="prick"></span>
+        <div class="upptagna-content">
+          <p class="upptagna-platser">62</p>
+          <span>Upptagna</span>
+        </div>
+      </div>
+      <div class="ledighet">
+        <div class="ledighet-bar">
+          <span class="bar-lediga"></span>
+          <span class="bar-upptagna"></span>
+        </div>
+        <p><span class="lediga-percent">69,6</span>% lediga platser</p>
+      </div>
+      <a
+        class="navbar-action"
+        href="(#funktion-där-man-kommer-kunna-plinga-lediga-platser??)"
+        >Visa parkeringsplatser →</a
+      >
     </nav>
-    <svg
-      class="parking-labels"
-      viewBox="0 0 1919 584"
-      preserveAspectRatio="xMidYMid meet"
-      role="img"
-      aria-label="204 numrerade parkeringsplatser"
-    ></svg>
+    <main id="parking-map"></main>
     <script src="js/script.js"></script>
   </body>
 </html>
