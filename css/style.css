@@ -2,7 +2,7 @@
   font-family: "Poppins";
   src: url("../annat/font/Poppins-Regular.ttf") format("truetype");
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   font-display: swap;
 }
 
@@ -15,158 +15,357 @@
 }
 
 body {
-  background-image: url("../annat/avaparkering.png");
-  background-color: #071126;
-  background-position: center calc(60%);
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  box-sizing: border-box;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  width: 100%;
-  padding: 10px 20px;
+  flex-direction: column;
   color: #ffffff;
   background: #071126;
   font-family: "Poppins", sans-serif;
 }
 
-.navbar img {
-  display: block;
-  width: 48px;
+.toppmeny {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: clamp(16px, 2vw, 32px);
+  width: 100%;
+  padding: clamp(16px, 2.5vw, 32px) clamp(18px, 4vw, 64px);
+  color: #ffffff;
+  background: linear-gradient(120deg, #0d1b35, #0a1429);
+  box-shadow: 0 10px 28px rgb(0 0 0 / 24%);
 }
 
-.navbar > .totala-platser,
-.totala-platser-lediga,
-.totala-platser-upptagna {
+.logotyp img {
+  display: block;
+  width: clamp(56px, 5vw, 76px);
+}
+
+.toppmeny > .statistik-total,
+.statistik-lediga,
+.statistik-upptagna {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding-left: 18px;
+  gap: 12px;
+  padding-left: clamp(14px, 2vw, 28px);
   border-left: 1px solid #526078;
 }
 
-.totala-content,
-.lediga-content,
-.upptagna-content {
+.statistik-innehall,
+.statistik-lediga-innehall,
+.statistik-upptagna-innehall {
   display: flex;
   flex-direction: column;
 }
 
-.totala-content .totala-platser,
-.lediga-content .lediga-platser,
-.upptagna-content .upptagna-platser {
+.statistik-innehall .antal-total,
+.statistik-lediga-innehall .antal-lediga,
+.statistik-upptagna-innehall .antal-upptagna {
   color: #ffffff;
   font-family: "Poppins Bold", sans-serif;
-  font-size: 24px;
+  font-size: clamp(26px, 2.8vw, 38px);
+  line-height: 1.15;
 }
 
-.totala-content span,
-.lediga-content span,
-.upptagna-content span {
+.statistik-innehall span,
+.statistik-lediga-innehall span,
+.statistik-upptagna-innehall span {
   color: #c1c9d8;
-  font-size: 12px;
+  font-size: clamp(12px, 1vw, 14px);
 }
 
-.totala-platser-lediga .lediga-platser {
-  color: #20c45a;
+.statistik-lediga .antal-lediga {
+  color: #4ade80;
 }
 
-.totala-platser-upptagna .upptagna-platser {
-  color: #ed3b3b;
+.statistik-upptagna .antal-upptagna {
+  color: #fb7185;
 }
 
-.prick {
+.indikator {
   display: block;
-  flex: 0 0 16px;
-  width: 16px;
-  height: 16px;
+  flex: 0 0 12px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
 }
 
-.totala-platser-lediga .prick {
-  background: #20c45a;
+.statistik-lediga .indikator,
+.indikator.ledig {
+  background: #4ade80;
+  box-shadow: 0 0 12px rgb(74 222 128 / 38%);
 }
 
-.totala-platser-upptagna .prick {
-  background: #ed3b3b;
+.statistik-upptagna .indikator,
+.indikator.upptagen {
+  background: #fb7185;
+  box-shadow: 0 0 12px rgb(251 113 133 / 35%);
 }
 
-.ledighet {
-  flex: 1;
+.tillganglighet {
+  flex: 1 1 160px;
   min-width: 150px;
-  padding: 0 18px;
+  padding: 0 clamp(12px, 2vw, 28px);
   border-left: 1px solid #526078;
 }
 
-.ledighet-bar {
+.tillganglighet-stapel {
   display: flex;
-  height: 12px;
-  margin-bottom: 6px;
+  height: 10px;
+  margin-bottom: 8px;
   overflow: hidden;
-  background: #ed3b3b;
+  background: #512431;
   border-radius: 10px;
 }
 
-.bar-lediga {
-  width: 70%;
-  background: #20c45a;
+.stapel-lediga {
+  width: 0;
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+  transition: width 180ms ease;
 }
 
-.bar-upptagna {
+.stapel-upptagna {
   flex: 1;
 }
 
-.ledighet p {
+.tillganglighet p {
   color: #c1c9d8;
-  font-size: 12px;
+  font-size: 13px;
 }
 
-.ledighet .lediga-percent {
+.tillganglighet .procent-lediga {
   color: #ffffff;
   font-family: "Poppins Bold", sans-serif;
 }
 
-.navbar-action {
-  padding-left: 18px;
-  color: #ffffff;
-  border-left: 1px solid #526078;
+.meny-knapp {
+  padding: 14px 20px;
+  color: #071126;
+  background: #a7f3d0;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: "Poppins Bold", sans-serif;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background-color 150ms ease;
+}
+
+.meny-knapp:hover {
+  background: #6ee7b7;
+}
+
+#parkeringsomrade {
+  display: grid;
+  flex: 1 1 auto;
+  place-items: center;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.kartyta {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.parkeringsbild,
+.parkeringsplatser {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.parkeringsbild {
+  object-fit: fill;
+}
+
+.parkeringsrad {
+  position: absolute;
+}
+
+.parkeringsplats {
+  position: absolute;
+  top: 0;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  padding: 0;
+  background: rgb(34 197 94 / 36%);
+  border: 0;
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    transform 120ms ease;
+}
+
+.parkeringsplats:hover {
+  z-index: 1;
+  background: rgb(74 222 128 / 78%);
+  transform: scale(1.12);
+}
+
+.parkeringsplats.upptagen {
+  background: rgb(239 68 68 / 48%);
+  border-color: rgb(254 202 202 / 82%);
+}
+
+.parkeringsplats.upptagen:hover {
+  background: rgb(248 113 113 / 82%);
+}
+
+#parkeringsomrade.visa-endast-lediga .parkeringsplats.upptagen {
+  visibility: hidden;
+}
+
+.bottenmeny {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 64px;
+  padding: 14px clamp(18px, 4vw, 64px);
+  color: #cbd5e1;
+  background: #0a1429;
+  border-top: 1px solid rgb(148 163 184 / 16%);
   font-size: 13px;
-  text-decoration: none;
+}
+
+.teckenforklaring {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.teckenforklaring span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   white-space: nowrap;
 }
 
-.navbar-action:hover {
-  text-decoration: underline;
+.meny-knapp:focus-visible,
+.parkeringsplats:focus-visible {
+  outline: 3px solid #facc15;
+  outline-offset: 3px;
 }
 
-@media (max-width: 750px) {
-  .navbar {
-    flex-wrap: wrap;
-    gap: 12px;
-    padding: 10px;
+@media (max-width: 1050px) {
+  .toppmeny {
+    display: grid;
+    grid-template-columns:
+      minmax(100px, 1fr) repeat(3, minmax(70px, 0.6fr)) minmax(130px, 1fr)
+      auto;
+    gap: clamp(8px, 1.2vw, 14px);
+    padding: 18px clamp(14px, 2.4vw, 24px);
   }
 
-  .navbar > .totala-platser,
-  .totala-platser-lediga,
-  .totala-platser-upptagna {
+  .tillganglighet {
+    flex-basis: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .toppmeny {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .logotyp img {
+    width: 52px;
+  }
+
+  .logotyp {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .toppmeny > .statistik-total {
+    grid-column: 1;
+  }
+
+  .statistik-lediga {
+    grid-column: 2;
+  }
+
+  .statistik-upptagna {
+    grid-column: 3;
+  }
+
+  .toppmeny > .statistik-total,
+  .statistik-lediga,
+  .statistik-upptagna {
+    grid-row: 2;
+    gap: 8px;
     padding-left: 10px;
   }
 
-  .ledighet {
-    flex-basis: 100%;
-    order: 1;
+  .statistik-innehall .antal-total,
+  .statistik-lediga-innehall .antal-lediga,
+  .statistik-upptagna-innehall .antal-upptagna {
+    font-size: 24px;
   }
 
-  .navbar-action {
-    margin-left: auto;
+  .tillganglighet {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    padding: 0;
+    border-left: 0;
+  }
+
+  .meny-knapp {
+    grid-column: 2 / -1;
+    grid-row: 1;
+    justify-self: end;
+    padding: 12px 14px;
+    font-size: 12px;
+  }
+
+  .bottenmeny {
+    min-height: 58px;
+    gap: 12px;
+    padding: 12px 14px;
+    font-size: 11px;
+  }
+
+  .teckenforklaring {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .kartyta {
+    height: auto;
+    max-height: 100%;
+    aspect-ratio: 1919 / 584;
+  }
+}
+
+@media (max-width: 380px) {
+  .toppmeny > .statistik-total,
+  .statistik-lediga,
+  .statistik-upptagna {
+    padding-left: 7px;
+  }
+
+  .statistik-innehall .antal-total,
+  .statistik-lediga-innehall .antal-lediga,
+  .statistik-upptagna-innehall .antal-upptagna {
+    font-size: 21px;
+  }
+
+  .bottenmeny {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }

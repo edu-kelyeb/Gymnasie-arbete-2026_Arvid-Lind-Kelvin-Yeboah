@@ -8,44 +8,58 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <nav class="navbar">
-      <a class="logo" href="index.html">
+    <nav class="toppmeny">
+      <a class="logotyp" href="index.html">
         <img src="annat/logo.png" alt="Åva Park" />
       </a>
-      <div class="totala-platser">
-        <div class="totala-content">
-          <p class="totala-platser">204</p>
+      <div class="statistik-total">
+        <div class="statistik-innehall">
+          <p class="antal-total">0</p>
           <span>Totalt</span>
         </div>
       </div>
-      <div class="totala-platser-lediga">
-        <span class="prick"></span>
-        <div class="lediga-content">
-          <p class="lediga-platser">142</p>
+      <div class="statistik-lediga">
+        <span class="indikator"></span>
+        <div class="statistik-lediga-innehall">
+          <p class="antal-lediga">0</p>
           <span>Lediga</span>
         </div>
       </div>
-      <div class="totala-platser-upptagna">
-        <span class="prick"></span>
-        <div class="upptagna-content">
-          <p class="upptagna-platser">62</p>
+      <div class="statistik-upptagna">
+        <span class="indikator"></span>
+        <div class="statistik-upptagna-innehall">
+          <p class="antal-upptagna">0</p>
           <span>Upptagna</span>
         </div>
       </div>
-      <div class="ledighet">
-        <div class="ledighet-bar">
-          <span class="bar-lediga"></span>
-          <span class="bar-upptagna"></span>
+      <div class="tillganglighet">
+        <div class="tillganglighet-stapel">
+          <span class="stapel-lediga"></span>
+          <span class="stapel-upptagna"></span>
         </div>
-        <p><span class="lediga-percent">69,6</span>% lediga platser</p>
+        <p><span class="procent-lediga">0</span>% lediga platser</p>
       </div>
-      <a
-        class="navbar-action"
-        href="(#funktion-där-man-kommer-kunna-plinga-lediga-platser??)"
-        >Visa lediga platser →</a
-      >
+      <button class="meny-knapp" id="filtrera-knapp" type="button">
+        Visa lediga platser
+      </button>
     </nav>
-    <main id="parking-map"></main>
+    <main id="parkeringsomrade">
+      <div class="kartyta">
+        <img
+          class="parkeringsbild"
+          src="annat/avaparkering.png"
+          alt="Karta över parkeringsplatser"
+        />
+        <div class="parkeringsplatser"></div>
+      </div>
+    </main>
+    <nav class="bottenmeny">
+      <span>Klicka på en plats för att ändra status</span>
+      <div class="teckenforklaring">
+        <span><i class="indikator ledig"></i>Ledig</span>
+        <span><i class="indikator upptagen"></i>Upptagen</span>
+      </div>
+    </nav>
     <script src="js/script.js"></script>
   </body>
 </html>
