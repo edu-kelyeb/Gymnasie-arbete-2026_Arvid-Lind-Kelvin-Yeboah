@@ -182,12 +182,21 @@ body {
   height: 100%;
 }
 
+.parkeringsbild,
+.parkeringsplatser {
+  pointer-events: none;
+}
+
 .parkeringsbild {
   object-fit: fill;
 }
 
 .parkeringsrad {
   position: absolute;
+}
+
+.parkeringsrad:hover {
+  z-index: 1;
 }
 
 .parkeringsplats {
@@ -201,6 +210,7 @@ body {
   background: rgb(34 197 94 / 36%);
   border: 0;
   cursor: pointer;
+  pointer-events: auto;
   transition:
     background-color 120ms ease,
     transform 120ms ease;
