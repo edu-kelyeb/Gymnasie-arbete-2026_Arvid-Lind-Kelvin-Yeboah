@@ -173,7 +173,6 @@ body {
 
 .kartyta {
   position: relative;
-  flex: 0 0 auto;
   width: 100%;
   height: 100%;
 }
@@ -185,10 +184,6 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-}
-
-.parkeringsbild,
-.parkeringsplatser {
   pointer-events: none;
 }
 
@@ -278,10 +273,6 @@ body {
     gap: clamp(8px, 1.2vw, 14px);
     padding: 18px clamp(14px, 2.4vw, 24px);
   }
-
-  .tillganglighet {
-    flex-basis: auto;
-  }
 }
 
 @media (max-width: 800px) {
@@ -340,7 +331,6 @@ body {
     justify-self: end;
     width: 100%;
     min-width: 0;
-    flex: 0 0 auto;
     padding: 12px 14px;
     font-size: 12px;
   }
