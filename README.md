@@ -50,4 +50,4 @@ PROBLEM: Vissa CSS-regler gjorde att knapparna och statistiksektionerna inte fun
 19/11/2026-TORSDAG
 VAD SOM GJORDES: Vi skapade en Flask-server i app.py och en databasfil i database.py. Webbsidan kopplades till en MySQL-databas med parkeringsplatserna 001–204. API:n kan nu hämta alla parkeringsplatser och ändra status mellan ledig och upptagen när användaren klickar på en plats. JavaScript hämtar status från databasen och uppdaterar statistik, färger och filtreringen automatiskt.
 
-PROBLEM: Flask, MySQL och databaskopplingen behövde testas tillsammans för att säkerställa att statusändringar sparas och visas korrekt.
+PROBLEM: Flask, MySQL och databaskopplingen behövde testas tillsammans för att säkerställa att statusändringar sparas och visas korrekt. Det räcker med att ett enda tecken gällande status och id bland annat var fel och hela databsen blev felkopplad så mycket felsökning krävdes kortfattat.
