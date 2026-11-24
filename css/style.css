@@ -279,8 +279,10 @@ body {
   .toppmeny {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
-    padding: 14px;
+    grid-template-rows: 48px auto auto;
+    align-items: center;
+    gap: 8px 10px;
+    padding: 10px 12px;
   }
 
   .logotyp img {
@@ -308,50 +310,96 @@ body {
   .statistik-lediga,
   .statistik-upptagna {
     grid-row: 2;
-    gap: 8px;
-    padding-left: 10px;
+    justify-content: center;
+    min-width: 0;
+    gap: 6px;
+    padding-left: 8px;
   }
 
   .statistik-innehall .antal-total,
   .statistik-lediga-innehall .antal-lediga,
   .statistik-upptagna-innehall .antal-upptagna {
-    font-size: 24px;
+    font-size: 22px;
+  }
+
+  .statistik-innehall span,
+  .statistik-lediga-innehall span,
+  .statistik-upptagna-innehall span {
+    font-size: 11px;
   }
 
   .tillganglighet {
     grid-column: 1 / -1;
     grid-row: 3;
+    min-width: 0;
     padding: 0;
     border-left: 0;
+  }
+
+  .tillganglighet-stapel {
+    height: 7px;
+    margin-bottom: 4px;
+  }
+
+  .tillganglighet p {
+    font-size: 11px;
   }
 
   .meny-knapp {
     grid-column: 2 / -1;
     grid-row: 1;
     justify-self: end;
-    width: 100%;
+    width: min(220px, 100%);
     min-width: 0;
-    padding: 12px 14px;
+    padding: 10px 12px;
     font-size: 12px;
   }
 
   .bottenmeny {
-    min-height: 58px;
-    gap: 12px;
-    padding: 12px 14px;
-    font-size: 11px;
+    min-height: 52px;
+    gap: 8px;
+    padding: 10px 12px;
+    font-size: 10px;
   }
 
   .teckenforklaring {
-    gap: 12px;
+    gap: 8px;
+  }
+
+  #parkeringsomrade {
+    justify-content: start;
+    place-items: start;
+    overflow: auto;
+    overscroll-behavior: contain;
+    touch-action: pan-x pan-y;
+  }
+
+  .kartyta {
+    flex: 0 0 auto;
   }
 }
 
 @media (max-width: 640px) {
+  .toppmeny {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #parkeringsomrade {
+    align-items: center;
+  }
+
   .kartyta {
-    height: auto;
-    max-height: 100%;
+    width: 720px;
+    height: 219px;
     aspect-ratio: 1919 / 584;
+  }
+
+  .parkeringsplats {
+    min-height: 12px;
+  }
+
+  .bottenmeny > span {
+    max-width: 55%;
   }
 }
 
@@ -359,17 +407,23 @@ body {
   .toppmeny > .statistik-total,
   .statistik-lediga,
   .statistik-upptagna {
-    padding-left: 7px;
+    gap: 4px;
+    padding-left: 5px;
   }
 
   .statistik-innehall .antal-total,
   .statistik-lediga-innehall .antal-lediga,
   .statistik-upptagna-innehall .antal-upptagna {
-    font-size: 21px;
+    font-size: 19px;
   }
 
   .bottenmeny {
     align-items: flex-start;
     flex-direction: column;
+    min-height: 64px;
+  }
+
+  .bottenmeny > span {
+    max-width: 100%;
   }
 }

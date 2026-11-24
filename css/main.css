@@ -9,3 +9,11 @@ body {
   overflow: hidden;
 }
 
+@media (max-width: 800px), (orientation: portrait) and (max-height: 600px) {
+  html,
+  body {
+    height: 100vh;
+    height: 100dvh;
+  }
+}
+
